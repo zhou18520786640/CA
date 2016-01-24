@@ -18,10 +18,11 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor grayColor];
 
-    self.whiteView = [[UIView alloc] initWithFrame:CGRectMake(([UIScreen mainScreen].bounds.size.width - 160) / 2 , 80, 80, 80)];
+    self.whiteView = [[UIView alloc] initWithFrame:CGRectMake(([UIScreen mainScreen].bounds.size.width - 160) / 2 , 80, 120, 80)];
     self.whiteView.backgroundColor = [UIColor whiteColor];
     UIImage *image = [UIImage imageNamed:@"snow.png"];
     self.whiteView.layer.contents = (__bridge id)image.CGImage;
+    self.whiteView.layer.contentsGravity = kCAGravityBottom;
     
 
     [self.view addSubview:self.whiteView];
