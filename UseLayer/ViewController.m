@@ -18,15 +18,15 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor grayColor];
 
-    self.whiteView = [[UIView alloc] initWithFrame:CGRectMake(([UIScreen mainScreen].bounds.size.width - 160) / 2 , 80, 160, 160)];
+    self.whiteView = [[UIView alloc] initWithFrame:CGRectMake(([UIScreen mainScreen].bounds.size.width - 160) / 2 , 80, 80, 80)];
     self.whiteView.backgroundColor = [UIColor whiteColor];
+    UIImage *image = [UIImage imageNamed:@"snow.png"];
+    self.whiteView.layer.contents = (__bridge id)image.CGImage;
+    
+
     [self.view addSubview:self.whiteView];
     
-    CALayer *layer = [CALayer layer];
-    layer.frame = CGRectMake(20, 20, 120, 120);
-    // layer的颜色类型必须是CGColorRef
-    layer.backgroundColor = [UIColor yellowColor].CGColor;
-    [self.whiteView.layer addSublayer:layer];
+
 }
 
 - (void)didReceiveMemoryWarning {
